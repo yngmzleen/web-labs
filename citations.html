@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иванов Егор Владиславович. Оформление текста</title>
+    <link rel="stylesheet" href="C:\Users\suzzg\OneDrive\Рабочий стол\4 сем\WEB-программирование\web-labs\main.css">
+
+    <style>
+        .citation {
+            border: 1px solid red;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px #0002;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        }
+
+        .text {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author {
+            font-size: 30px;
+            text-align: left;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 50%;
+        }
+
+        .citation2 {
+            border: 2px dashed purple;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px;
+            box-shadow: 5px 5px 3px #0002;
+            background: linear-gradient(to right, purple, pink, white);
+        }
+
+        .text2 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author2 {
+            font-size: 18px;
+            text-align: justify;
+            opacity: 0.7;
+            margin-top: 20px;
+        }
+
+        .citation3 {
+            border: 1px solid blue;
+            padding: 10px;
+            border-radius: 8px;
+            margin: 15px;
+            box-shadow: 3px 3px 5px #0004;
+            background: linear-gradient(to right, blue, lightblue, white);
+        }
+
+        .text3 {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author3 {
+            font-size: 16px;
+            text-align: center;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        .citation4 {
+            border: 1px solid rgb(166, 108, 0);
+            padding: 8px;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 4px 4px 6px #0001;
+            background: linear-gradient(to right, orange, lightyellow, white);
+        }
+
+        .text4 {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author4 {
+            font-size: 16px;
+            text-align: center;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+
+        .citation5 {
+            border: 2px solid green;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 12px;
+            box-shadow: 2px 2px 4px #0003;
+            background: linear-gradient(to right, green, lightgreen, white);
+        }
+
+        .text5 {
+            font-size: 18px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .author5 {
+            font-size: 14px;
+            text-align: right;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+
+        .citation6 {
+            border: 2px solid violet;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 6px 6px 8px #0003;
+            background: linear-gradient(to right, violet, lavender, white);
+        }
+
+        .text6 {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author6 {
+            font-size: 16px;
+            text-align: center;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+
+        .citation7 {
+            border: 1px solid yellow;
+            padding: 14px;
+            border-radius: 8px;
+            margin: 15px;
+            box-shadow: 5px 5px 7px #0002;
+            background: linear-gradient(to right, yellow, lightyellow, white);
+        }
+
+        .text7 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author7 {
+            font-size: 16px;
+            text-align: center;
+            opacity: 0.8;
+            margin-top: 12px;
+        }
+
+        .citation8 {
+            border: 2px dashed pink;
+            padding: 12px;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 4px 4px 6px #0003;
+            background: linear-gradient(to right, pink, lightpink, white);
+        }
+
+        .text8 {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author8 {
+            font-size: 14px;
+            text-align: center;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+
+        .citation9 {
+            border: 1px solid brown;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 18px;
+            box-shadow: 3px 3px 5px #0004;
+            background: linear-gradient(to right, brown, sandybrown, white);
+        }
+
+        .text9 {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author9 {
+            font-size: 16px;
+            text-align: center;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+        
+        .citation10 {
+            border: 2px solid gray;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 15px;
+            box-shadow: 6px 6px 7px #0001;
+            background: linear-gradient(to right, gray, lightgray, white);
+        }
+
+        .text10 {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author10 {
+            font-size: 14px;
+            text-align: center;
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        .citation11 {
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 8px 8px 10px #0002;
+            background: linear-gradient(to right, black, lightgray, white);
+        }
+
+        .text11 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .author11{
+            font-size: 18px;
+            text-align: center;
+            opacity: 0.8;
+            margin-top: 12px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 3
+    </header>
+
+    <main>
+       <div class="citation">
+            <div class="text">
+                Стремитесь не к успеху, а к ценностям, которые он дает.
+            </div>
+            <div class="author">
+                Альберт Эйнштейн                 
+            </div>
+        </div>
+            
+        <div class="citation2">
+            <div class="text2">
+                На мой взгляд, существует единственная форма человеческого падения — потеря цели.
+            </div>
+            <div class="author2">
+                Айн Рэнд
+            </div>            
+        </div>
+
+        <div class="citation3">
+            <div class="text3">
+                Никто не ценит того, чего слишком много.
+            </div>
+            <div class="author3">
+                Колин Маккалоу
+            </div>            
+        </div>
+
+        <div class="citation4">
+            <div class="text4">
+                Всегда очень тягостно новыми глазами увидеть то, с чем успел так или иначе сжиться.
+            </div>
+            <div class="author4">
+                Френсис Скотт Фицджеральд
+            </div>            
+        </div>
+        
+        <div class="citation5">
+            <div class="text5">
+                Улыбайся, не доставляй беде удовольствия.
+            </div>
+            <div class="author5">
+                Габриэль Гарсиа Маркес
+            </div>            
+        </div>
+
+        <div class="citation6">
+            <div class="text6">
+                Я обо всем подумаю потом, когда найду в себе силы это выдержать.
+            </div>
+            <div class="author6">
+                Маргарет Митчелл
+            </div>            
+        </div>
+
+        <div class="citation7">
+            <div class="text7">
+                Кто вопросов не задает, тот лжи не слышит.
+            </div>
+            <div class="author7">
+                Чарльз Диккенс
+            </div>            
+        </div>
+
+        <div class="citation8">
+            <div class="text8">
+                Ничто меня так не раздражает, как вид людей, которые сидят и ничего не делают, когда я работаю.
+            </div>
+            <div class="author8">
+                Джером К. Джером
+            </div>            
+        </div>
+
+        <div class="citation9">
+            <div class="text9">
+                Кто сказал, что мой свет лучше твоей тьмы?
+            </div>
+            <div class="author9">
+                Дэниел Киз
+            </div>            
+        </div>
+
+        <div class="citation10">
+            <div class="text10">
+                Лучше быть оптимистом и ошибаться, чем оставаться вечно правым пессимистом.
+            </div>
+            <div class="author10">
+                Жан-Мишель Генассия
+            </div>            
+        </div>
+
+        <div class="citation11">
+            <div class="text11">
+                Если соблюдаешь мелкие правила, можно нарушать большие. 
+            </div>
+            <div class="author11">
+                Джордж Оруэлл
+            </div>            
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; Иванов Егор, ФБИ-22, 2 курс, 2024    
+    </footer>
+</body>
