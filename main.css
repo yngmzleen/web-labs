@@ -4,6 +4,16 @@ body {
     font-family: Arial;
     margin: 0px;
 }
+div.menu {
+    border: 7px solid rgba(161, 0, 201, 0.67);
+    border-radius: 30 px;
+    width: 300px;
+    margin: 0 auto;
+}
+div.menu:hover {
+    background-color: rgb(249, 243, 167);
+    box-shadow: 0 0 15px black;
+}
 a {
     color: red;
     text-decoration: none;
@@ -42,6 +52,9 @@ header {
     font-size: 16pt; 
     border-radius: 30px;
 }
+main {
+    margin: 10px 20px 45px;
+}
 
 footer {
     background-color: rgb(86, 1, 139); 
@@ -52,4 +65,8 @@ footer {
     font-style: italic; 
     text-align: right; 
     border-radius: 30px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
