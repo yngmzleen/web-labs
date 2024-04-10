@@ -4,6 +4,29 @@ body {
     font-family: Arial;
     margin: 0px;
 }
+a:link {
+    color: purple;
+    opacity: 0.3;
+}
+a:visited {
+    color: rgb(142, 1, 149);
+    opacity: 0.3;
+}
+a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:active {
+    color: black;
+    opacity: 0.3;
+
+}
 
 header {
     background-color: rgb(86, 1, 139);
