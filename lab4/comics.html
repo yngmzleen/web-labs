@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comics</title>
+<link rel="stylesheet" href="..\main.css">
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .image {
+    max-width: 100%;
+    height: auto;
+  }
+  .cloud {
+    position: absolute;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .cloud:hover {
+    opacity: 1;
+  }
+  .cloud1 {
+    right: 800px;
+    top: 100px;
+    width: 100px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+  }
+  .cloud2 {
+    right: 700px;
+    top: 75px;
+    width: 120px;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+  }
+  .cloud3 {
+    right: 600px;
+    top: 70px;
+    width: 140px;
+    height: 70px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+  }
+</style>
+</head>
+<body>
+    <header>
+        Свидетель из Фрязино
+    </header>
+    <main>
+        <img src="1480184708144619212.jpg" class="image">
+        <div class="cloud cloud1">Облако 1</div>
+        <div class="cloud cloud2">Облако 2</div>
+        <div class="cloud cloud3">...</div>
+    </main>
+    <footer>
+        Иванов Егор, ФБИ-22, 2 курс, 2024  
+    </footer>
+</body>
+</html>
