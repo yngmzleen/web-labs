@@ -1,78 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Вывод сумм</title>
-<link rel="stylesheet" href="..\main.css">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="../favicon-32x32.png">
-<link rel="icon" href="../favicon-16x16.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вывод сумм</title>
+    <link rel="stylesheet" href="..\main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
 
-<script>
-    function showSum() {
-        let inputA = document.getElementById('numberA');
-        let inputB = document.getElementById('numberB');
+    <script>
+        function showSum() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
 
-        let a = parseInt(inputA.value);
-        let b = parseInt(inputB.value);
-        let result = a + b;
-        alert('Сумма '+ a +' и '+ b +' равна' + result)    
-    }
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a + b;
+            alert('Сумма '+ a +' и '+ b +' равна' + result)    
+        }
 
-    function showDif() {
-        let inputA = document.getElementById('numberA');
-        let inputB = document.getElementById('numberB');
+        function showDif() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
 
-        let a = parseInt(inputA.value);
-        let b = parseInt(inputB.value);
-        let result = a - b;
-        alert('Разность '+ a +' и '+ b +' равна' + result)    
-    }
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert('Разность '+ a +' и '+ b +' равна' + result)    
+        }
 
-    function showPr() {
-        let inputA = document.getElementById('numberA');
-        let inputB = document.getElementById('numberB');
+        function showPr() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
 
-        let a = parseInt(inputA.value);
-        let b = parseInt(inputB.value);
-        let result = a * b;
-        alert('Произведение '+ a +' и '+ b +' равна' + result)    
-    }
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert('Произведение '+ a +' и '+ b +' равна' + result)    
+        }
 
-    function showDel() {
-        let inputA = document.getElementById('numberA');
-        let inputB = document.getElementById('numberB');
+        function showDel() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
 
-        let a = parseInt(inputA.value);
-        let b = parseInt(inputB.value);
-        let result = a / b;
-        alert('Результат деления '+ a +' и '+ b +' равен' + result)    
-    }
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a / b;
+            alert('Результат деления '+ a +' и '+ b +' равен' + result)    
+        }
 
-    function showAuthor() {
-        let author = 'Автор страницы:\nИванов Егор Владиславович'
-        alert(author);
-    }
+        function showAuthor() {
+            let author = 'Автор страницы:\nИванов Егор Владиславович'
+            alert(author);
+        }
 
-    function showHello() {
-        let hello = 'Приветствую вас на моей странице!\nСюда заходят такие люди, как: оуджи буда, Глеб и...'
-        alert(hello);
-    }
-</script>
+        function showHello() {
+            let hello = 'Приветствую вас на моей странице!\nСюда заходят такие люди, как: оуджи буда, Глеб и...'
+            alert(hello);
+        }
 
-<style>
-.message {
-    width: 250px;
-    height: 30px;
-    background-color: rgb(235, 235, 235);
-    border: 2px solid;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 30px;
-    text-align: center;
-}
-</style>
+        function changeOutput(buttonNum, backColor, textColor, borderRad) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderRadius = borderRad;
+        }
+    </script>
+
+    <style>
+        .message {
+            width: 250px;
+            height: 30px;
+            background-color: rgb(235, 235, 235);
+            border: 2px solid;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        #output {
+            border: 2px solid;
+            width: 300px;
+            height: 40px;
+        }
+    </style>
 </head>
 <body>
     <header onclick="showAuthor()">
@@ -87,6 +101,15 @@
         <div class="message" onclick="showDif()">Найти разность чисел</div>
         <div class="message" onclick="showPr()">Найти произведение чисел</div>
         <div class="message" onclick="showDel()">Разделить числа</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'yellow', 'red', '10px')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', '20px')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'purple', 'yellow', '30px')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'orange', 'blue', '50px')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer onclick="showHello()">
