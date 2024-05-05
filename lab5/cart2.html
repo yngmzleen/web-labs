@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="C:\Users\suzzg\OneDrive\Рабочий стол\4 сем\WEB-программирование\web-labs\main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+
+    <script>
+            function Summ() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+                let inputC = document.getElementById('numberC');
+                let inputD = document.getElementById('numberD');
+                let inputE = document.getElementById('numberE');
+                let inputF = document.getElementById('numberF');
+                let inputG = document.getElementById('numberG');
+                let inputH = document.getElementById('numberH');
+
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                let c = parseInt(inputC.value);
+                let d = parseInt(inputD.value);
+                let e = parseInt(inputE.value);
+                let f = parseInt(inputF.value);
+                let g = parseInt(inputG.value);
+                let h = parseInt(inputH.value);
+                if (isNaN(a)) a = 0;
+                if (isNaN(b)) b = 0;
+                if (isNaN(c)) c = 0;
+                if (isNaN(d)) d = 0;
+                if (isNaN(e)) e = 0;
+                if (isNaN(f)) f = 0;
+                if (isNaN(g)) g = 0;
+                if (isNaN(h)) h = 0;
+
+                let result = a * 59.99 + b * 19.99 + c * 59.99 + d * 29.99 + e * 39.99 + f * 39.99 + g * 39.99 + h * 39.99;
+
+                if (result <= 0) document.getElementById('sum').innerHTML = "Ваша корзина пуста!";
+                else document.getElementById('sum').innerHTML = 'Сумма продуктов = $' + result.toFixed(2);
+            }
+
+            function nul() {
+                document.getElementById('numberA').value = '';
+                document.getElementById('numberB').value = '';
+                document.getElementById('numberC').value = '';
+                document.getElementById('numberD').value = '';
+                document.getElementById('numberE').value = '';
+                document.getElementById('numberF').value = '';
+                document.getElementById('numberG').value = '';
+                document.getElementById('numberH').value = '';
+                document.getElementById('sum').innerHTML = '';
+            }
+    </script>
+
+    <style>
+        .cart { 
+            width: 300px;
+            height: auto;
+            background-color: rgb(235, 235, 235);
+            border: 2px solid;
+            display: inline-block;
+            border-radius: 5px;
+            text-align: left;
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            padding: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        Ваша корзина
+    </header>
+    <div class="cart">
+        <h1>Корзина товаров</h1>
+        <div>
+            <label>HEAVY WIDE ZIP HOODIE distressed($59.99): </label>
+            <input type="number" id="numberA" min="0" placeholder="0">
+        </div>
+        <div>
+            <label>FADED T-SHIRT($19.99): </label>
+            <input type="number" id="numberB" min="0" placeholder="0">
+        </div>
+        <div>
+            <label>HEAVY WIDE HOODIE distressed($59.99): </label>
+            <input type="number" id="numberC" min="0" placeholder="0">
+        </div>
+        <div>
+            <label>ZIP HOODIE grey($29.99): </label>
+            <input type="number" id="numberD" min="0" placeholder="0">
+        </div>
+        <div>
+            <label>RAW SEAM ZIP-HOODIE($39.99): </label>
+            <input type="number" id="numberE" min="0" placeholder="0">
+        </div>
+        <div>
+            <label>DESTROYED WORK JEANS($39.99): </label>
+            <input type="number" id="numberF" min="0" placeholder="0">
+        </div>
+        <div>
+            <label>BASE CARGO black($39.99): </label>
+            <input type="number" id="numberG" min="0" placeholder="0">
+        </div>
+        <div>
+            <label>CLASSIQUE PANTS($39.99): </label>
+            <input type="number" id="numberH" min="0" placeholder="0">  
+        </div>
+        <button onclick="Summ()">Рассчитать</button>
+        <button onclick="nul()">Очистить</button>
+        <p id="sum"></p>
+    </div>
+    <footer>
+        Иванов Егор, ФБИ-22, 2 курс, 2024  
+    </footer>
+</body>
+</html>
