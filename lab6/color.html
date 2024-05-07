@@ -8,53 +8,53 @@
         <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="../favicon-16x16.png">
         <link rel="shortcut icon" href="../favicon-32x32.png">
-<style>
-    .color {
-        border: 4px solid rgb(123, 53, 245);
-        border-radius: 20px; 
-        margin: 50px auto; 
-        padding: 20px;
-        width: 40%;
-        text-align: center;
-        font-size: larger;
-        background-color: lightgray;
-        user-select: none;
-        color: darkblue;
-        cursor: grab;
-        transition: 0.5s;
-        position: relative;
-        top: 50px; 
-        left: 50px; 
-    }
-</style>
-        
-<script>
-    let color = ['orange','cyan','yellow','lime','pink','navy','silver']; 
-    let colorrus = ['оранжевый','голубой','желтый','лайм','розовый','темно-синий','серебряный']; 
-    let k = 0;
-    function changeColor(div) {
-        if(k == color.length){
-            k = 0;
-        }
-        else{
-            div.style.backgroundColor = color[k];
-            document.getElementById('color-name').innerHTML = colorrus[k];
-            if(colorrus[k] == 'голубой' || colorrus[k] == 'серебряный'){ 
-                div.style.color = 'black';
+        <style>
+            .color {
+                border: 4px solid rgb(123, 53, 245);
+                border-radius: 20px; 
+                margin: 50px auto; 
+                padding: 20px;
+                width: 40%;
+                text-align: center;
+                font-size: larger;
+                background-color: lightgray;
+                user-select: none;
+                color: darkblue;
+                cursor: grab;
+                transition: 0.5s;
+                position: relative;
+                top: 50px; 
+                left: 50px; 
             }
-            else{
-                div.style.color = 'white';
+        </style>
+            
+        <script>
+            let color = ['orange','cyan','yellow','lime','pink','navy','silver']; 
+            let colorrus = ['оранжевый','голубой','желтый','лайм','розовый','темно-синий','серебряный']; 
+            let k = 0;
+            function changeColor(div) {
+                if(k == color.length){
+                    k = 0;
+                }
+                else{
+                    div.style.backgroundColor = color[k];
+                    document.getElementById('color-name').innerHTML = colorrus[k];
+                    if(colorrus[k] == 'голубой' || colorrus[k] == 'серебряный'){ 
+                        div.style.color = 'black';
+                    }
+                    else{
+                        div.style.color = 'white';
+                    }
+                    k++;
+                }
             }
-            k++;
-        }
-    }
-</script>
+        </script>
 
     </head>
 
     <body>
         <header>
-            НГТУ, ФБ, Лабораторная работа 6
+            Перебор цветов
         </header>
 
         <main>
