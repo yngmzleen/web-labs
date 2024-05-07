@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Перебор цветов </title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../favicon-16x16.png">
+        <link rel="shortcut icon" href="../favicon-32x32.png">
+<style>
+    .color {
+        border: 4px solid rgb(123, 53, 245);
+        border-radius: 20px; 
+        margin: 50px auto; 
+        padding: 20px;
+        width: 40%;
+        text-align: center;
+        font-size: larger;
+        background-color: lightgray;
+        user-select: none;
+        color: darkblue;
+        cursor: grab;
+        transition: 0.5s;
+        position: relative;
+        top: 50px; 
+        left: 50px; 
+    }
+</style>
+        
+<script>
+    let color = ['orange','cyan','yellow','lime','pink','navy','silver']; 
+    let colorrus = ['оранжевый','голубой','желтый','лайм','розовый','темно-синий','серебряный']; 
+    let k = 0;
+    function changeColor(div) {
+        if(k == color.length){
+            k = 0;
+        }
+        else{
+            div.style.backgroundColor = color[k];
+            document.getElementById('color-name').innerHTML = colorrus[k];
+            if(colorrus[k] == 'голубой' || colorrus[k] == 'серебряный'){ 
+                div.style.color = 'black';
+            }
+            else{
+                div.style.color = 'white';
+            }
+            k++;
+        }
+    }
+</script>
+
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+        </header>
+
+        <main>
+            <div class="color" ondblclick="changeColor(this)">
+                Цвет: <span id="color-name">голубой</span><br>
+                Сделайте двойной щелчек для смены цвета
+            </div>
+        </main>
+
+        <footer> 
+            &copy; Иванов Егор, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
