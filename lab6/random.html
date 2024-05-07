@@ -9,75 +9,76 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-32x32.png">
     <link rel="icon" href="../favicon-16x16.png">
-</head>
 
-<style>
-    .game {
-        border: 2px solid #000;
-        border-radius: 10px;
-        width: 80%;
-        margin: 20px auto;
-        padding: 20px;
-    }
-</style>
 
-<script>
-    let number;
-    let count = 0;
-
-    function startGame() {
-        number = Math.floor(Math.random() * 100) + 1;
-        let screens = document.getElementsByClassName('game');
-        screens[0].style.display = 'none';
-        screens[1].style.display = 'block';
-    }
-
-    function guess() {
-        count++;
-        let input = document.getElementById('user-number');
-        let userNumber = parseInt(input.value);
-        let message = document.getElementById('result');
-
-        if (userNumber < 1 || userNumber > 100 || isNaN(userNumber)) {
-            message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
+    <style>
+        .game {
+            border: 2px solid #000;
+            border-radius: 10px;
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
         }
+    </style>
 
-        else if (userNumber > number) {
-            message.innerHTML = 'Вы ввели слишком большое число';
-        }
-        else if (userNumber < number) {
-            message.innerHTML = 'Вы ввели слишком маленькое число';
-        } 
-        else {
+    <script>
+        let number;
+        let count = 0;
+
+        function startGame() {
+            number = Math.floor(Math.random() * 100) + 1;
             let screens = document.getElementsByClassName('game');
-            screens[1].style.display = 'none';
-            screens[2].style.display = 'block';
-            document.getElementById('winning-number').innerHTML = number;
-            document.getElementById('try-count').innerHTML = count;
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
         }
-    }
 
-    function playAgain() {
-        let screens = document.getElementsByClassName('game');
-        screens[2].style.display = 'none';
-        screens[1].style.display = 'block';
-        startGame();
-        count = 0;
-        document.getElementById('result').innerHTML = '';
-    }
+        function guess() {
+            count++;
+            let input = document.getElementById('user-number');
+            let userNumber = parseInt(input.value);
+            let message = document.getElementById('result');
 
-    function showRules() {
-        document.getElementById('rules-button').style.display = 'none';
-        document.getElementById('hide-rules-button').style.display = 'inline';
-        document.getElementById('rules').style.display = 'block';
-    }
+            if (userNumber < 1 || userNumber > 100 || isNaN(userNumber)) {
+                message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
+            }
 
-    function hideRules() {
-        document.getElementById('hide-rules-button').style.display = 'none';
-        document.getElementById('rules-button').style.display = 'inline';
-        document.getElementById('rules').style.display = 'none';
-    }
-</script>
+            else if (userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
+            }
+            else if (userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
+            } 
+            else {
+                let screens = document.getElementsByClassName('game');
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
+                document.getElementById('winning-number').innerHTML = number;
+                document.getElementById('try-count').innerHTML = count;
+            }
+        }
+
+        function playAgain() {
+            let screens = document.getElementsByClassName('game');
+            screens[2].style.display = 'none';
+            screens[1].style.display = 'block';
+            startGame();
+            count = 0;
+            document.getElementById('result').innerHTML = '';
+        }
+
+        function showRules() {
+            document.getElementById('rules-button').style.display = 'none';
+            document.getElementById('hide-rules-button').style.display = 'inline';
+            document.getElementById('rules').style.display = 'block';
+        }
+
+        function hideRules() {
+            document.getElementById('hide-rules-button').style.display = 'none';
+            document.getElementById('rules-button').style.display = 'inline';
+            document.getElementById('rules').style.display = 'none';
+        }
+    </script>
+</head>
 
 <body>
     <header>
