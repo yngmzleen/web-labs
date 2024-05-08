@@ -1,52 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Магазин одежды</title>
-<link rel="stylesheet" href="..\main.css">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="../favicon-32x32.png">
-<link rel="icon" href="../favicon-16x16.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин одежды</title>
+    <link rel="stylesheet" href="..\main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
 
-<style>
-  .product-card {
-    height: 450px;
-    width: 300px;
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: inline-block;
-    vertical-align: top;
-    position: relative; 
-  }
-  .product-card img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease; 
-  }
-  .product-card:hover img {
-    transform: scale(1.1); 
-  }
-  .product-card h2 {
-    margin: 10px 0;
-  }
-  .product-card p {
-    margin: 0;
-    font-size: 14px;
-    color: #666;
-  }
-  .product-info {
-    margin-top: 10px;
-  }
-  .price {
-  font-weight: bold;
-  color: #333;
-}
-</style>
+    <script>
+        
+    </script>
+
+    <style>
+        .product-card {
+            height: 450px;
+            width: 300px;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: top;
+            position: relative; 
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease; 
+        }
+        .product-card:hover img {
+            transform: scale(1.1); 
+        }
+        .product-card h2 {
+            margin: 10px 0;
+        }
+        .product-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .product-info {
+            margin-top: 10px;
+        }
+        .price {
+        font-weight: bold;
+        color: #333;
+        }
+
+        .cart { 
+            width: 700px;
+            height: 400px;
+            background-color: rgb(235, 235, 235);
+            border: 2px solid;
+            display: block;
+            cursor: pointer;
+            border-radius: 30px;
+            text-align: center;
+            top: 145%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -124,6 +143,19 @@
                 <p>Плотная, но при этом мягкая брючная ткань прямиком из Италии</p>
             </div>
         </div>
+
+        <div class="cart">
+            <h1>Корзина товаров</h1>
+            <label>HEAVY WIDE ZIP HOODIE distressed($59.99): <input type="number" id="numberA"></label><br>
+            <label>FADED T-SHIRT($19.99) <input type="number" id="numberB"></label><br>  
+            <label>HEAVY WIDE HOODIE distressed($59.99) <input type="number" id="numberC"></label><br>  
+            <label>ZIP HOODIE grey($29.99) <input type="number" id="numberD"></label><br>
+            <label>RAW SEAM ZIP-HOODIE($39.99) <input type="number" id="numberE"></label><br>  
+            <label>DESTROYED WORK JEANS($39.99) <input type="number" id="numberF"></label><br>  
+            <label>BASE CARGO black($39.99) <input type="number" id="numberG"></label><br>  
+            <label>CLASSIQUE PANTS($39.99) <input type="number" id="numberH"></label><br>        
+        </div>
+
     </main>
 
     <footer>
