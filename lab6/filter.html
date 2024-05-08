@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Фильтр товаров</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../favicon-16x16.png">
+        <link rel="shortcut icon" href="../favicon-32x32.png">
+        <style>
+            select {
+                padding: 25px;
+                margin: 25px;
+            }
+
+            button {
+                margin-bottom: 25px;
+            }
+            
+
+            div {
+                border: 4px solid rgb(123, 53, 245);
+                border-radius: 20px; 
+                margin: 50px auto; 
+                padding: 20px;
+                width: 40%;
+                text-align: center;
+                font-size: larger;
+                background-color: lightgray;
+                user-select: none;
+                color: darkblue;
+                cursor: grab;
+                transition: 0.5s;
+                position: relative;
+                top: 50px; 
+                left: 50px; 
+            }
+
+
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+        <script>
+            function filter() {
+                let color = document.getElementById('wear-color').value;
+                let type = document.getElementById('wear-type').value;
+                let wear = document.getElementById('wear');
+
+                if(color == 'Красный' && type == 'Футболка') {
+                    wear.src = 'kf.jpg'
+                }
+
+                else if(color == 'Черный' && type == 'Футболка') {
+                    wear.src = 'chf.jpg'
+                }
+
+                else if(color == 'Белый' && type == 'Футболка') {
+                    wear.src = 'bf.jpg'
+                }
+
+                else if(color == 'Красный' && type == 'Поло') {
+                    wear.src = 'kp.jpg'
+                }
+
+                else if(color == 'Белый' && type == 'Поло') {
+                    wear.src = 'bp.jpg'
+                }
+
+                else if(color == 'Черный' && type == 'Поло') {
+                    wear.src = 'chp.jpg'
+                }
+
+                else if(color == 'Красный' && type == 'Майка') {
+                    wear.src = 'km.jpg'
+                }
+
+                else if(color == 'Черный' && type == 'Майка') {
+                    wear.src = 'chm.jpg'
+                }
+                else if(color == 'Белый' && type == 'Майка') {
+                    wear.src = 'bm.jpg'
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            Фильтр товаров
+        </header>
+
+        <main>
+            <div>
+                Цвет одежды:
+                <select id="wear-color">
+                    <option>Красный</option>
+                    <option>Белый</option>
+                    <option>Черный</option>
+                </select><br>
+
+                Тип одежды:
+                <select id="wear-type">
+                    <option>Футболка</option>
+                    <option>Поло</option>
+                    <option>Майка</option>
+                </select><br>
+
+                <button onclick="filter()" style="width: 15%;">OK</button><br>
+            </div>
+
+            <img id="wear" style="text-align: center;">
+        </main>
+
+        <footer> 
+            &copy; Иванов Егор, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>

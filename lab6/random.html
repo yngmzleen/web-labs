@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иванов Егор Владиславович. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+
+
+    <style>
+        .game {
+            border: 2px solid #000;
+            border-radius: 10px;
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+        }
+    </style>
+
+    <script>
+        let number;
+        let count = 0;
+
+        function startGame() {
+            number = Math.floor(Math.random() * 100) + 1;
+            let screens = document.getElementsByClassName('game');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+
+        function guess() {
+            count++;
+            let input = document.getElementById('user-number');
+            let userNumber = parseInt(input.value);
+            let message = document.getElementById('result');
+
+            if (userNumber < 1 || userNumber > 100 || isNaN(userNumber)) {
+                message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
+            }
+
+            else if (userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
+            }
+            else if (userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
+            } 
+            else {
+                let screens = document.getElementsByClassName('game');
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
+                document.getElementById('winning-number').innerHTML = number;
+                document.getElementById('try-count').innerHTML = count;
+            }
+        }
+
+        function playAgain() {
+            let screens = document.getElementsByClassName('game');
+            screens[2].style.display = 'none';
+            screens[1].style.display = 'block';
+            startGame();
+            count = 0;
+            document.getElementById('result').innerHTML = '';
+        }
+
+        function showRules() {
+            document.getElementById('rules-button').style.display = 'none';
+            document.getElementById('hide-rules-button').style.display = 'inline';
+            document.getElementById('rules').style.display = 'block';
+        }
+
+        function hideRules() {
+            document.getElementById('hide-rules-button').style.display = 'none';
+            document.getElementById('rules-button').style.display = 'inline';
+            document.getElementById('rules').style.display = 'none';
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="game">
+            <button onclick="startGame()">
+                Сыграть в игру
+            </button>
+        </div>
+
+        <div class="game" style="display: none;">
+            <h1>Угадай число!</h1>
+            <div>
+                Задумано число от 1 до 100. Угадай, какое?<br>
+                <input type="number" value="" min="1" max="100" id="user-number"><br>
+                <button onclick="guess()">Угадать</button>
+                <div id="result"></div>
+            </div>
+        </div>
+
+        <div class="game" style="display: none;">
+            <h1>Поздравляем, вы выиграли!</h1>
+            <div>
+                Задуманное число: <span id="winning-number"></span>
+            </div>
+            <div>
+                Количество попыток: <span id="try-count"></span>
+            </div>
+            <div>
+                <button onclick="playAgain()">Сыграть еще раз</button>
+            </div>
+        </div>
+
+        <div class="game">
+            <div>
+                <button id="rules-button" onclick="showRules()">Показать правила игры</button>
+                <button id="hide-rules-button" style="display: none;" onclick="hideRules()">Скрыть правила игры</button>
+                <div id="rules" style="display: none;">
+                    <h2>Правила игры:</h2>
+                    <ol type="I">
+                        <li>Нажмите на кнопку "Сыграть в игру".</li>
+                        <li>Введите число от 1 до 100 в поле и попробуйте угадать загаданное число.</li>
+                        <li>Если ваше число больше загаданного, вы увидите сообщение "Вы ввели слишком большое число".</li>
+                        <li>Если ваше число меньше загаданного, вы увидите сообщение "Вы ввели слишком маленькое число".</li>
+                        <li>Подберите верное число! После успешного угадывания отобразится количество попыток.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Иванов Егор, ФБИ-22, 2 курс, 2024    
+    </footer>
+</body>
+</html>
