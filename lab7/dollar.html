@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Иванов Егор Владиславович. Лабораторная работа 7 </title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../favicon-16x16.png">
+        <link rel="shortcut icon" href="../favicon-32x32.png">
+        <style>
+            table {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            button:hover {
+                background-color: white;
+            }
+        </style>
+        <script>
+            function showExchange() {
+                const exchange = [91.3124, 91.1231, 91.8239, 91.6330, 91.3591, 91.2573, 90.9239, 90,9873, 90,6537, 90,4082];
+                let table = document.getElementById('dollar-table');
+                for(let i = 0; i < exchange.length; i++) {
+                    let tr = document.createElement('tr');
+                    let td = document.createElement('td');
+                    td.innerText = exchange[i];
+                    tr.appendChild(td);
+                    table.appendChild(tr);
+                }
+
+                document.getElementById('button').style.display = 'none'
+            
+                let sum = 0;
+                for(let i = 0; i < exchange.length; i++) {
+                    sum += exchange[i];
+                }
+                let average = sum / exchange.length;
+
+                average = average.toFixed(2);
+                document.getElementById('detail').innerText = 'Средний курс: ' + average;
+                document.getElementById('dollar-table').style.display = 'table';
+                document.getElementById('detail').style.display = 'block';
+            }
+        </script>
+    
+    </head>
+
+    <body>
+        <header>
+            Курс доллара
+        </header>
+
+        <main>
+            <button onclick="showExchange()" id="button">Курс доллара</button>
+            <table border="1" id="dollar-table"></table>
+            <div id="detail"></div>
+        </main>
+
+        <footer> 
+            &copy; Иванов Егор, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
