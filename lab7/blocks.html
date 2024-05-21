@@ -84,6 +84,31 @@
                         main.appendChild(newBlock);
                     }
             }
+
+            function opacityChange() {
+                let main = document.querySelector('main');
+                for(let i = 10; i <=100; i+=10) {
+                    let newBlock = document.createElement('div');
+                    newBlock.style.width = '40px';
+                    newBlock.style.height = '40px'; 
+                    newBlock.style.borderRadius = '50%'; 
+                    newBlock.style.backgroundColor = 'orange';
+                    newBlock.style.color = 'white'; 
+                    newBlock.style.fontSize = '20px'; 
+                    newBlock.style.fontWeight = 'bold'; 
+                    newBlock.style.boxShadow = 'black';
+                    newBlock.style.opacity = i + '%';
+                    newBlock.style.display = 'inline-block';
+                    newBlock.style.justifyContent = 'center';
+                    newBlock.style.alignItems = 'center';
+                    newBlock.style.textAlign = 'center'; 
+                    newBlock.style.lineHeight = '40px';
+
+                    newBlock.innerHTML = `${i / 10}`;
+
+                    main.appendChild(newBlock);
+                }
+            }
         </script>
     
     </head>
@@ -99,6 +124,7 @@
             <button onclick="addNewBlocks()">Добавить блоки</button><br>
             <button onclick="add20_50()">20 => 50</button><br>
             <button onclick="add10_80()">10 => -80</button><br>
+            <button onclick="opacityChange()">Полупрозрачные блоки</button><br>
         </main>
 
         <footer> 
