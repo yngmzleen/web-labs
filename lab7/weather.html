@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иванов Егор Владиславович. Лабораторная работа 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-16x16.png">
+    <link rel="shortcut icon" href="../favicon-32x32.png">
+    <style>
+
+    </style>
+    <script>
+        window.onload = function() {
+            const Url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+
+            fetch(Url)
+                .then(response => response.json())
+                .then(data => {
+                    const hours = data.hourly.time;
+                    const temperatures = data.hourly.temperature_2m;
+
+                    const index8 = hours.findIndex(time => time.endsWith('08:00'));
+                    const index12 = hours.findIndex(time => time.endsWith('12:00'));
+                    const index20 = hours.findIndex(time => time.endsWith('20:00'));
+
+                    document.getElementById('temp8').textContent = temperatures[index8] + '°C';
+                    document.getElementById('temp12').textContent = temperatures[index12] + '°C';
+                    document.getElementById('temp20').textContent = temperatures[index20] + '°C';
+                });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        Прогноз погоды
+    </header>
+
+    <main>
+        <div class="weather">
+            <p>Температура в 8 часов: <span id="temp8"></p>
+            <p>Температура в 12 часов: <span id="temp12"></p>
+            <p>Температура в 20 часов: <span id="temp20"></p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Иванов Егор Владиславович, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Иванов Егор Владиславович. Лабораторная работа 7 </title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../favicon-16x16.png">
+        <link rel="shortcut icon" href="../favicon-32x32.png">
+        <style>
+            .currency-info {
+                border: 1px solid #000;
+                padding: 10px;
+                margin: 10px 0;
+                font-family: Arial, sans-serif;
+            }
+        </style>
+        <script>
+            function getEuroExchangeRate() {
+                const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+                fetch(url)
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(json) {
+                        console.log(json);
+                    });
+            }
+        </script>
+    
+    </head>
+
+    <body>
+        <header>
+            Запрос курса евро
+        </header>
+
+        <main>
+            <a href='https://www.cbr-xml-daily.ru/daily_json.js'>Курсы ЦБ РФ в XML и JSON, API</a>
+            <div id="currency-info" class="currency-info"></div>
+        </main>
+
+        <footer> 
+            &copy; Иванов Егор, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
