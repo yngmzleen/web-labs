@@ -89,8 +89,8 @@
                 let main = document.querySelector('main');
                 for(let i = 10; i <=100; i+=10) {
                     let newBlock = document.createElement('div');
-                    newBlock.style.width = '40px';
-                    newBlock.style.height = '40px'; 
+                    newBlock.style.width = '90px';
+                    newBlock.style.height = '90px'; 
                     newBlock.style.borderRadius = '50%'; 
                     newBlock.style.backgroundColor = 'orange';
                     newBlock.style.color = 'white'; 
@@ -102,9 +102,39 @@
                     newBlock.style.justifyContent = 'center';
                     newBlock.style.alignItems = 'center';
                     newBlock.style.textAlign = 'center'; 
-                    newBlock.style.lineHeight = '40px';
+                    newBlock.style.lineHeight = '80px';
 
                     newBlock.innerHTML = `${i / 10}`;
+
+                    main.appendChild(newBlock);
+                }
+            }
+
+            function greenRed() {
+                let main = document.querySelector('main');
+                let times = parseInt(document.getElementById('greenRed').value)
+                for(i = times; i > 0; i--) {
+                    let newBlock = document.createElement('div');
+                    newBlock.style.width = '90px';
+                    newBlock.style.height = '90px'; 
+                    newBlock.style.borderRadius = '50%'; 
+                    newBlock.style.color = 'white'; 
+                    newBlock.style.fontSize = '20px';
+                    newBlock.style.fontWeight = 'bold'; 
+                    newBlock.style.boxShadow = 'black'; 
+                    newBlock.style.display = 'inline-block'
+                    newBlock.style.justifyContent = 'center';
+                    newBlock.style.alignItems = 'center';
+                    newBlock.style.textAlign = 'center'; 
+                    newBlock.style.lineHeight = '80px';
+                    newBlock.style.border = '1px'
+                    if(i % 2 == 0){
+                        newBlock.style.backgroundColor = 'green'; 
+                    }
+                    else{
+                        newBlock.style.backgroundColor = 'red'; 
+                    }
+                    newBlock.innerHTML = `${i}`;
 
                     main.appendChild(newBlock);
                 }
@@ -125,6 +155,8 @@
             <button onclick="add20_50()">20 => 50</button><br>
             <button onclick="add10_80()">10 => -80</button><br>
             <button onclick="opacityChange()">Полупрозрачные блоки</button><br>
+            <input type="text" id="greenRed" placeholder="введите кол-во блоков">
+            <button onclick="greenRed()">Добавить зеленые и красные блоки</button><br>
         </main>
 
         <footer> 
