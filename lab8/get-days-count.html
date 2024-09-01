@@ -8,6 +8,12 @@
         <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="../favicon-16x16.png">
         <link rel="shortcut icon" href="../favicon-32x32.png">
+        <script src="get-days-count.js"></script>
+        <style>
+            div {
+                margin: 30px;
+            }
+        </style>
     </head>
 
     <body>
@@ -16,8 +22,18 @@
         </header>
 
         <main>
-            <li><a href="date.html"> Дата </a></li>
-            <li><a href="get-days-count.html"> Число дней с даты рождения </a></li>
+            <div class="menu">
+                <div>
+                    <label> Дата рождения: <input type="date"></label>
+                </div>
+
+                <div>
+                    <button onclick="showDaysCount()"> Показать число дней </button>
+                    <button onclick="closeDaysCount()"> Очистить поле </button>
+                </div>
+
+                <div id="daysCount"></div>
+            </div>
         </main>
 
         <footer> 
